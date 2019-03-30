@@ -1,0 +1,97 @@
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16rem; */
+    line-height: 1.7;
+    color: #777;
+    padding: 1rem 1rem 0rem 1rem;
+
+    @include respond(450){
+        padding: 0;
+    }
+}
+
+.heading-text{
+    color: $text-color-white;
+    text-transform: uppercase;
+    text-align: center;
+    backface-visibility: hidden;
+
+    
+
+    &--main, &--main2{
+        display: inline-block;
+        font-size: 6rem;
+        font-weight: 500;
+
+    }
+    
+    &--main{
+        animation-name: fadeInLeft;
+        animation-duration: 1500ms;
+
+        &::after{
+                content: " ";
+                white-space: pre;
+        }
+    }
+
+    &--main2{
+        animation-name: fadeInRight;
+        animation-duration: 1500ms;
+    }
+
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 3rem;
+        margin-bottom: 4rem;
+        animation-name: textSub;
+        animation-delay: 1200ms;
+        animation-duration: 1s;
+        animation-fill-mode: backwards;
+        backface-visibility: hidden;
+    }
+}
+
+.heading-tertiary{
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.heading-popup{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $text-color-gray-dark;
+}
+
+.paragraph{
+    font-size: $default-font-size;
+   
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}
+
+.heading-text-secondary{
+    font-size: 3.5rem;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $primary-color-green, $primary-color-blue);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    backface-visibility: hidden;
+    
+    
+    &:hover{
+        animation-name: focus;
+        animation-duration: 1s;
+        text-shadow: .4rem .5rem 3rem rgba(3, 3, 3, 0.247);
+        
+    } 
+}

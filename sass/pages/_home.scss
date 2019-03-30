@@ -1,0 +1,169 @@
+// SECTION ABOUT
+.section-about{
+    background: $color-gray-light-1;
+    padding: 25rem 5rem 22rem 5rem;
+    margin-top: -20rem;
+
+    @include respond(768){
+           padding: 22rem 5rem 50rem 5rem;
+    }
+
+    &--content{
+        display: flex;
+        justify-content: space-around;
+
+        @include respond(768){
+           flex-direction: column;
+           align-items: center;
+        }
+
+        & .text-content{
+            width: 40%;
+            @include respond(768){
+                width: 80%;
+            }
+        }
+        & .image-content{
+            width: 50%;
+            margin-top: 8rem;
+            @include respond(768){
+                width: 90%;
+            }
+            
+        }
+
+        
+    }
+}
+// SECTION FEATURES
+.section-features{
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5rem 10rem 5rem;
+    margin-top: -10rem;
+    height: 600px;
+    background-color: $color-gray-light-1;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(114deg,
+        rgba($primary-color-blue, 0.671) 13%, 
+        rgba($primary-color-green, 0.612) 100%),
+        url(../img/adventurebg.jpg) no-repeat;
+    background-size: cover;
+
+    @include respond(900){
+        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+        padding-top: 10rem;
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 12rem;
+    }
+
+    
+    @include respond(768){
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 5rem;
+    }
+    
+    @include respond(450){
+        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+        padding-top: 10rem;
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 12rem;
+    }
+    
+
+    
+
+
+    
+}
+
+//  SECTION TOURS
+.section-tours{
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+    padding: 20rem 5rem 10rem 5rem;
+    margin-top: -19rem;
+    background-color: $color-gray-light-1;
+    position: relative;
+
+
+    @include respond(450){
+        clip-path: polygon(0 2%, 100% 0, 100% 100%, 0% 100%);
+        margin-top: -5rem;
+        padding-top: 15rem;
+    }
+
+
+    &__content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        @include respond(450){
+            flex-direction: column;
+            margin-top: 0rem;
+            padding: 5rem 5rem 10rem 5rem;
+        }
+    }
+}
+
+//  SECTION STORIRES    
+
+.section-stories{
+    padding: 5rem 5rem 20rem 5rem;
+    position: relative;
+}
+
+// SECTON BOOK
+
+.section-book{
+    padding: 20rem 15rem 30rem 15rem;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+    margin-top: -10rem;
+    background: linear-gradient(114deg,
+    rgba($primary-color-blue, 1) 30%, 
+    rgba($primary-color-green, 1) 90%);
+    /* background: linear-gradient(to right bottom, $primary-color-blue,$primary-color-green); */
+
+    @include respond(900){
+        margin-top: -15rem;
+        padding: 20rem 10rem 30rem 10rem;   
+    }
+
+    @include respond(450){
+        padding: 15rem 3rem 30rem 3rem;
+        clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+.book{
+    background-image: linear-gradient(105deg, rgba($color-white, .8)0%,
+                                            rgba($color-white, .8) 50%,
+                                            transparent 50%),
+                                            url(../img/bg-book.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5rem;
+    background-position: bottom;
+    height: 50rem;
+    border-radius: 2px;
+    border: 6px solid rgba($color-white, 0.671);
+    box-shadow: 0 1.5rem 5rem rgba($color-black, 0.4);
+
+    @include respond(450){
+        background-image: linear-gradient(360deg, rgba($color-white, .8)0%,
+        rgba($color-white, .8) 100%,
+        transparent 60%),
+        url(../img/bg-book.jpg);
+
+        border: none;
+        height: 61rem;
+    }
+}

@@ -1,0 +1,125 @@
+.btn{
+    &,
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: $default-font-size;
+        padding: 1.5rem 3rem;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all .2s;
+        position: relative;
+        color: $text-color-gray;
+
+        //CHANGE FOR BUTTON ELEMENT
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 .7rem 2rem rgba(0,0,0, .2);
+
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active,
+    &:focus{
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .4rem 2rem rgba(0,0,0, .2);
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--white{
+        background-color: $text-color-white;
+        color: $text-color-gray;
+
+        &::after{
+            background-color: $text-color-white;
+        }
+    }
+
+    &--classic{
+        background: linear-gradient(to right, $primary-color-green, $primary-color-blue);
+        color: $text-color-white !important;
+
+        &::after{
+            background: linear-gradient(114deg,
+            rgba($primary-color-blue, 0.671) 13%, 
+            rgba($primary-color-green, 0.612) 100%)
+        }
+    }
+
+    &-popup{
+        position: absolute;
+        float: right;
+        top: -7.7rem;
+        right: 1.5rem;
+        box-shadow: 0rem 0rem 1rem rgba(126, 112, 107, 0.445);
+
+        @include respond(450){
+            top: -4rem;
+        }
+    }
+
+    &--animated{
+        animation: shaking 0.8s
+        cubic-bezier(0.455, 0.030, 0.515, 0.955)  3s;
+    }
+
+    &--visibility{
+        backface-visibility: visible;
+    }
+}
+a{
+    backface-visibility: hidden; //Fixed error for animations
+}
+
+    
+
+.btn-text{
+    &:link,
+    &:visited{
+        font-size: 1.6rem;
+        color: $primary-color-blue;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $primary-color-blue;
+        padding: 3px;
+    }
+
+    &:hover{
+        background: linear-gradient(114deg,
+        rgba($primary-color-blue, 0.671) 25%, 
+        rgba($primary-color-green, 0.612) 80%);
+        color: $text-color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-3px);
+    }
+
+    &:active{
+        background: linear-gradient(114deg,
+        rgba($primary-color-blue, 0.8) 25%, 
+        rgba($primary-color-green, 0.8) 80%);
+        color: $text-color-white;
+        box-shadow: 0 .4rem 2rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}

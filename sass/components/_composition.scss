@@ -1,0 +1,51 @@
+.composition{
+    position: relative;
+
+    &__photo{
+        width: 55%;
+        box-shadow: 0rem 1.5rem 4rem rgba($color-black, .5);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        /* transition: transform .4s, box-shadow .2s, z-index .2s; */
+        transition: all .4s; // NEW BORDER
+        backface-visibility: hidden;
+        
+        &--p1{
+            left: 0;
+            top: -2rem;
+        }
+        &--p2{
+            right: 0;
+            top: 2rem;
+        }
+        &--p3{
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover{
+           /*  background: linear-gradient(114deg,
+            rgba($primary-color-blue, 0.8) 13%, 
+            rgba($primary-color-green, 0.8) 80%); 
+            padding: 1rem; */
+            transform: scale(1.05) translateY(-.8rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .4);
+            z-index: 20;
+
+            border: 1rem solid transparent;  // NEW EFECTS FOR BORDERS
+            border-image: linear-gradient(114deg,
+            rgba($primary-color-blue, 0.8) 13%, 
+            rgba($primary-color-green, 0.8) 80%);
+            border-image-slice: 1;
+            border-image-outset: 2rem;
+        }
+    }
+
+    &:hover &__photo:not(:hover){
+        transform: scale(.90);
+    }
+
+
+}
+

@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    @include respond(450){
+        padding: 0;
+    }
+}
+
+html{
+    font-size: 62.5%;  // What 1rem is | 1rem = 10px;  10px/16px = 62.5%
+    
+    @include respond(1350){
+        font-size: 56%;  // 1rem = 9px, 9/16 = 56%
+    }
+    
+    @include respond(900){ // width < 900
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(768){
+        font-size: 43%; // 1rem = 7px, 7/16= 43%
+    }
+    
+    @include respond(big-desktop){
+        font-size: 75%; // 1rem = 12px, 12/16 = 75%
+    }
+}
+
+::selection{
+    background: $selector-color;
+}

@@ -1,0 +1,42 @@
+.header{
+    height: 95vh;
+    /* background: linear-gradient(to right bottom, rgba(67, 199, 192, 0.9), rgba(49, 221, 164, 0.671)), url(../img/mainbg.jpg); */
+    background-color: #08AEEA;
+    background: linear-gradient(114deg,
+    rgba($primary-color-blue, 0.8) 13%, 
+    rgba($primary-color-green, 0.8) 100%), url(../img/mainbg.jpg);
+    background-size: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-position: bottom;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond (600){
+        clip-path: polygon(0 0, 100% 0, 100% 65vh, 0% 100%);
+        height: 75vh;
+    }
+
+    @include respond (900){
+        clip-path: polygon(0 0, 100% 0, 100% 65vh, 0% 100%);
+        height: 75vh;
+    }
+
+    &__logo-box{
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+    &__logo{
+        height: 7.5rem;
+        opacity: .8;
+    }
+    
+    &__text-box{
+        text-align: center;
+    }
+}

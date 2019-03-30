@@ -1,0 +1,89 @@
+.story{
+    background: transparent;
+    width: 60%;
+    margin: 0 auto;
+    padding: 4rem;
+    padding-left: 7rem;
+    font-size: $default-font-size;
+    border-radius: 3px;
+    position: relative;
+
+    @include respond(900){
+        width: 80%;   
+    }
+
+    @include respond(450){
+        width: 95%;
+    }
+
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background: rgba($color-white, .6);
+        box-shadow: 0 3rem 6rem rgba($color-black, .1);
+        transform: skewX(-12deg);
+        z-index: -1;
+
+        @include respond(450){
+            transform: skewX(-6deg);
+        }
+        // STORY BORDER GRADIENT
+        border: .7rem solid transparent;
+        border-image: linear-gradient(114deg,
+        rgba($primary-color-blue, 0.671) 13%, 
+        rgba($primary-color-green, 0.612) 80%);
+        border-image-slice: 1;
+        border-image-outset: 1.7rem;
+    }
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        background: white;
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem);
+        position: relative;
+
+        @include respond(450){
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+
+    &__image{
+        height: 100%;
+    }
+
+    &__caption{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        text-align: center;
+        opacity: 0;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+
+        @include respond(450){
+            font-size: 1.4rem;
+        }
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+        color: rgba(255,255,255,1);
+    }
+
+    &:hover &__image{
+        filter: blur(3px) brightness(75%);
+    }
+}

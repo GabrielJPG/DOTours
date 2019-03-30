@@ -1,0 +1,63 @@
+
+ .feature-box{
+    background-color: rgba($color-white, .8);
+    height: auto;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.5rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    padding: 2.5rem;
+    position: relative;
+    transition: all .3s;
+    bottom: 0%;
+
+    
+    &:not(:last-child){
+        margin-right: 5rem;
+
+        @include respond(900){
+            margin-right: 0;
+        }
+
+        @include respond(450){
+            margin-right: 0;
+        }
+
+        
+    }
+
+    @include respond(900){
+        width: 70%;
+       margin-top: 3rem;
+        transition: all .3s;
+        right: 0%;
+       &:hover{
+           right: 3%;
+       }
+    }
+    
+    @include respond(450){
+       width: 70%;
+       margin-top: 3rem;
+        transition: all .3s;
+        right: 0%;
+    
+       &:hover{
+           right: 3%;
+       }
+    }
+
+    &:hover{
+        /* transform: translateY(1.5vh) scale(1.05) skewY(7deg); */
+        bottom: 3%;
+    }
+
+    &__icon{
+        font-size: 6rem;
+        margin-bottom: 1.5rem;
+        background-image: linear-gradient(to right, $primary-color-green, $primary-color-blue);
+        -webkit-background-clip: text;
+        color: transparent;
+
+    }
+}

@@ -1,0 +1,168 @@
+// FUNCIONATILY
+.card{
+    perspective: 190rem;
+    position: relative;
+    left: -16rem;
+    height: 50rem;
+
+    @include respond(450){
+        position: static;
+    }
+
+    &__side{
+        background-color: $color-white;
+        font-size: 2rem;
+        height: 48rem;
+        transition: all .8s;
+        width: 30rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2rem 4rem rgba($color-black, .15);
+
+        @include respond(450){
+            width: 100%;
+        }
+
+        &--front{
+            background-color:$color-white;
+        }
+
+        &--back{
+            transform: rotateY(180deg);
+
+            // BACK STYLING
+            
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+                border: 5px solid rgba(255, 255, 255, 0.9);
+            }
+
+            &-2{
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+                border: 5px solid rgba(255, 255, 255, 0.9);
+            }
+
+            &-3{
+                background-image: linear-gradient(to right bottom, $color-quaternary-light, $color-quaternary-dark);
+                border: 5px solid rgba(255, 255, 255, 0.9);
+            }
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+
+    // FRONT SIDE STYLING
+
+    &__picture{
+        background-size: cover;
+        border-radius: 4px;
+        height: 23rem;
+        background-blend-mode: hard-light;
+        filter: saturate(1.0) opacity(0.8);
+        clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 0);
+        &--1{
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+            url(../img/colonialzone.jpg);
+            background-size: cover;
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+            url(../img/saonaisland.jpg);
+            background-size: cover;
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom, $color-quaternary-light, $color-quaternary-dark),
+            url(../img/waterfalls2.jpg);
+            background-size: cover;
+        }
+    }
+
+    &__heading{
+        font-size: 2.8rem;
+        color: $color-white;
+        font-weight: 300;
+        text-transform: uppercase;
+        position: absolute;
+        top: 12.5rem;
+        right: 4.5rem;
+        width: 75%;
+    }
+
+    &__heading-span{
+        padding: 1rem 1.5rem;
+        box-decoration-break: clone;
+
+        &--1{
+            background-image: linear-gradient(to right bottom,
+            rgba($color-secondary-light, .75),
+            rgba($color-secondary-dark, .75 ));
+        }
+
+        &--2{
+            background-image: linear-gradient(to right bottom,
+            rgba($color-tertiary-light, .75),
+            rgba($color-tertiary-dark, .75 ));
+            
+        }
+
+        &--3{
+            background-image: linear-gradient(to right bottom,
+            rgba($color-quaternary-light, .75),
+            rgba($color-quaternary-dark, .75 ));
+            
+        }
+    }
+
+    &__details{
+
+        ul{
+            text-align: center;
+            font-size: 1.5rem;
+            padding-top: 2.5rem;
+            width: 80%;
+            margin: 0 auto;
+            list-style: none;
+
+            li{
+                padding: 1rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid rgba($text-color-gray, .15);
+                }
+            }
+        }
+    }
+    // BACK SIDE STYLING
+    &__back-side{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    &__price-box{
+        color: $color-white;
+    }
+    &__price-value{
+        font-size: 6rem;
+        font-weight: 100;
+        margin-bottom: 4rem;
+    }
+    &__price-only{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+
+    }
+    
+}

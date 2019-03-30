@@ -1,0 +1,115 @@
+.form{
+    
+    &__group:not(:last-child){ 
+        margin-bottom: 1.5rem; 
+
+    }
+
+    &__input{
+        font-size: 1.5rem;
+        font-family: inherit;
+        padding: 1.5rem 2rem;
+        background: rgba($color-white, .6);
+        border: none;
+        border-radius: 2px;
+        border-bottom: 3px solid transparent;
+        width: 45%;
+        display: block;
+        transition: all .2s;
+
+        @include respond(450){
+            width: 100%;
+        }
+
+        &:focus{
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $primary-color-blue;
+            
+        }
+
+        &:focus:invalid{
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+    }
+
+    &::-webkit-input-placeholder{
+        color: $text-color-gray-dark;
+    }
+
+    &__label{
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__radio-group{
+        width: 25%;
+        display: inline-block;
+
+        @include respond(450){
+            width: 50%;
+        }
+    }
+
+    &__radio-input{
+        display: none;
+    }
+
+    &__radio-label{
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 3.5rem;
+        display: inline-block;
+        
+        @include respond(450){
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__radio-button{
+        height: 1rem;
+        width: 1rem;
+        display: inline-block;
+        position: absolute;
+        top: 0.50rem;
+        left: 0;
+        border: .45rem solid transparent;
+        border-image: linear-gradient(114deg,
+        rgba($primary-color-blue, 0.671) 13%, 
+        rgba($primary-color-green, 0.612) 80%);
+        border-image-slice: 1;
+        border-image-outset: 1rem;
+
+        &::after{
+            content: "";
+            display: block;
+            height: 1.5rem;
+            width: 1.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: linear-gradient(114deg,
+            rgba($primary-color-blue, 0.671) 13%, 
+            rgba($primary-color-green, 0.612) 80%);
+            transform:translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity .1s;
+        }
+    }
+
+    &__radio-input:checked + &__radio-label &__radio-button::after{
+        opacity: 1;
+    }
+}
