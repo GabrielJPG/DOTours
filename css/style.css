@@ -565,9 +565,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 5rem 10rem 5rem;
+  padding: 0 5rem 4rem 5rem;
   margin-top: -10rem;
-  height: 600px;
+  height: 750px;
   background-color: #f7f7f7;
   position: relative;
   overflow: hidden;
@@ -618,7 +618,7 @@ a {
   -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
           clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
   padding: 20rem 5rem 10rem 5rem;
-  margin-top: -19rem;
+  margin-top: -14rem;
   background-color: #f7f7f7;
   position: relative;
 }
